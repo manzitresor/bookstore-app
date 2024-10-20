@@ -3,8 +3,8 @@ import './App.css'
 
 function App() {
   return (
-      <div className="text-3xl font-bold ">
-        <nav>Navbar</nav>
+      <div className="text-3xl font-bold h-screen mx-auto">
+          <nav>Navbar</nav>
           <Outlet />
           <footer>Footer</footer>
       </div>
