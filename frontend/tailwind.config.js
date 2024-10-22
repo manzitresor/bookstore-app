@@ -10,6 +10,10 @@ export default {
         'primary': '#FFCE1A',
         'secondary': '#EAEAEAE5',
         'textColor': '#0D084285'
+      },
+      fontFamily: {
+        "Montserrat":["Montserrat", "sans-serif"],
+        "Nunito":["Nunito Sans", "sans-serif"]
       }
     },
   },
