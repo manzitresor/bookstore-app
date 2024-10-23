@@ -1,7 +1,7 @@
 import books from "../assets/Animation.svg"
 export default function Main() {
   return (
-    <div className="grid grid-cols-1 gap-y-16 md:gap-y-0 md:grid-cols-2 items-center mx-5"> 
+    <div className="grid grid-cols-1 gap-y-16 md:gap-y-0 md:grid-cols-2 items-center"> 
 
      <div className="space-y-6">
       <h1 className="font-Montserrat text-black font-medium text-4xl">New Releases This Week</h1>
