@@ -4,8 +4,10 @@ import { CgProfile } from "react-icons/cg";
 import { FaRegHeart } from "react-icons/fa";
 import { RiMenu2Fill } from "react-icons/ri";
 import { MdOutlineShoppingCart } from "react-icons/md";
+import  profile  from "../assets/avatar.png";
 
 export default function Navbar() {
+  const user = false;
   return (
     <header className="w-full md:max-w-screen-2xl md:mx-auto md:px-4 py-6">
       <nav className="flex mx-4 justify-between items-center md:mx-auto">
@@ -19,7 +21,9 @@ export default function Navbar() {
           </div>
         </div>
         <div className="gap-x-5 items-center hidden md:flex ">
-          <CgProfile className="size-6"/>
+          {
+            user ? <img src={profile} /> : <CgProfile className="size-6"/>
+          }
           <button>
             <FaRegHeart className="size-6"/>
           </button>
