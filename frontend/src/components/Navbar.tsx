@@ -8,6 +8,12 @@ import  profile  from "../assets/avatar.png";
 
 export default function Navbar() {
   const user = false;
+  const navigation = [
+    {name: 'Dashboard', href:'/dashboard'},
+    {name: 'Orders', href:'/order'},
+    {name: 'Cart Page', href:'/cart'},
+    {name: 'CheckOut', href:'/checkout'},
+  ]
   return (
     <header className="w-full md:max-w-screen-2xl md:mx-auto md:px-4 py-6">
       <nav className="flex mx-4 justify-between items-center md:mx-auto">
@@ -22,7 +28,7 @@ export default function Navbar() {
         </div>
         <div className="gap-x-5 items-center hidden md:flex ">
           {
-            user ? <img src={profile} /> : <CgProfile className="size-6"/>
+            user ? <img src={profile} alt="profile"/> : <CgProfile className="size-6"/>
           }
           <button>
             <FaRegHeart className="size-6"/>
