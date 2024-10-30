@@ -5,14 +5,17 @@ import { FaRegHeart } from "react-icons/fa";
 import { RiMenu2Fill } from "react-icons/ri";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import  profile  from "../assets/avatar.png";
+import { useState } from "react";
 
 export default function Navbar() {
-  const user = false;
+  const [isDropdown,setIsDropdown] = useState(false)
+  const user = true;
+
   const navigation = [
-    {name: 'Dashboard', href:'/dashboard'},
-    {name: 'Orders', href:'/order'},
-    {name: 'Cart Page', href:'/cart'},
-    {name: 'CheckOut', href:'/checkout'},
+    {name: 'Dashboard', path:'/dashboard'},
+    {name: 'Orders', path:'/orders'},
+    {name: 'Cart Page', path:'/cart'},
+    {name: 'CheckOut', path:'/checkout'},
   ]
   return (
     <header className="w-full md:max-w-screen-2xl md:mx-auto md:px-4 py-6">
@@ -28,7 +31,31 @@ export default function Navbar() {
         </div>
         <div className="gap-x-5 items-center hidden md:flex ">
           {
-            user ? <img src={profile} alt="profile"/> : <CgProfile className="size-6"/>
+              user ?
+                <div className="relative">
+                  <button onClick={() => setIsDropdown(prev => !prev)}>
+                      <img src={profile} alt="profile"/> 
+                  </button>
+                  { 
+                      isDropdown && (
+                      <ul className="absolute bg-white left-[-30px] top-14 w-48 shadow-lg px-3 rounded-md py-2 z-40">
+                        {
+                          navigation.map(item => (
+                              <li onClick={() => setIsDropdown(false)}>
+                                <NavLink 
+                                      to={item.path} 
+                                      className="block px-8 py-2 text-base hover:bg-gray-100">
+                                  {item.name}
+                                </NavLink>
+                              </li>
+                          ))
+                        }
+                      </ul>
+                      )
+                  }
+                </div>
+                : 
+              <CgProfile className="size-6"/>
           }
           <button>
             <FaRegHeart className="size-6"/>
