@@ -38,7 +38,7 @@ export default function Navbar() {
                   </button>
                   { 
                       isDropdown && (
-                      <ul className="absolute bg-white left-[-30px] top-14 w-48 shadow-lg px-3 rounded-md py-2 z-40">
+                      <ul className="absolute bg-white left-[-30px] top-14 w-48 shadow-xl px-3 rounded-md py-2 z-40">
                         {
                           navigation.map(item => (
                               <li onClick={() => setIsDropdown(false)}>
