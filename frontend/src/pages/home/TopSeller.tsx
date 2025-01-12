@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Product from "../components/Product";
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -11,6 +10,7 @@ import './style.css'
 
 import { Pagination } from 'swiper/modules';
 import { Navigation } from 'swiper/modules';
+import BookCard from "../book/BookCard";
 
 
 export interface Book {
@@ -78,7 +78,7 @@ export default function TopSeller() {
           {
             filteredBooks.map((filteredBook,index) => (
               <SwiperSlide>
-                <Product key={index} book={filteredBook}></Product>
+                <BookCard key={index} book={filteredBook}></BookCard>
               </SwiperSlide>
             ))
           }
