@@ -39,7 +39,7 @@ export default function TopSeller() {
   const filteredBooks = selectedCategory === 'Choose a genre' ? books : books.filter(book => book.category === selectedCategory.toLowerCase())
 
   return (
-    <div>
+    <div className="h-screen">
         <div>
             <h3 className="text-3xl font-semibold font-Montserrat mb-6">Top Sellers</h3>
                 <select className="bg-secondary rounded-md py-2 px-5 focus:outline-none" onChange={(e) => setSelectedCategory(e.target.value)}>
@@ -82,7 +82,7 @@ export default function TopSeller() {
               </SwiperSlide>
             ))
           }
-          </Swiper>
+        </Swiper>
       
     </div>
   )
