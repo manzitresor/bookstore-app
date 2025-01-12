@@ -1,6 +1,17 @@
 import { useEffect, useState } from "react";
 import Product from "../components/Product";
 
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import './style.css'
+
+import { Pagination } from 'swiper/modules';
+import { Navigation } from 'swiper/modules';
+
 
 export interface Book {
   _id: number;
@@ -37,14 +48,41 @@ export default function TopSeller() {
                     ))}   
                 </select>
         </div>
-        {/* Cards goes here */}
-        <div className="flex flex-col space-y-4">
+
+        <Swiper
+        slidesPerView={1}
+        spaceBetween={30}
+        navigation = {true}
+        breakpoints={{
+          640: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 40,
+          },
+          1024: {
+            slidesPerView: 2,
+            spaceBetween: 50,
+          },
+          1180: {
+            slidesPerView: 3,
+            spaceBetween: 50,
+          }
+        }}
+        modules={[Pagination,Navigation]}
+        className="mySwiper"
+      >
+
           {
             filteredBooks.map((filteredBook,index) => (
-              <Product key={index} book={filteredBook}></Product>
+              <SwiperSlide>
+                <Product key={index} book={filteredBook}></Product>
+              </SwiperSlide>
             ))
           }
-        </div>
+          </Swiper>
       
     </div>
   )
