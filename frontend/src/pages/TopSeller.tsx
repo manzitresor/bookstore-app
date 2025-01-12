@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Product from "../components/Product";
 
 
-interface Book {
+export interface Book {
   _id: number;
   title: string;
   description: string;
@@ -27,8 +27,6 @@ export default function TopSeller() {
 
   const filteredBooks = selectedCategory === 'Choose a genre' ? books : books.filter(book => book.category === selectedCategory.toLowerCase())
 
-  console.log(filteredBooks)
-
   return (
     <div>
         <div>
@@ -40,10 +38,12 @@ export default function TopSeller() {
                 </select>
         </div>
         {/* Cards goes here */}
-        <div className="flex items-center">
-          <Product></Product>
-          <Product></Product>
-          <Product></Product>
+        <div className="flex flex-col space-y-4">
+          {
+            filteredBooks.map((filteredBook,index) => (
+              <Product key={index} book={filteredBook}></Product>
+            ))
+          }
         </div>
       
     </div>
