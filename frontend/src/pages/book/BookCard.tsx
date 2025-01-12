@@ -1,13 +1,13 @@
 import { MdOutlineShoppingCart } from "react-icons/md"
-import { Book } from "../pages/TopSeller"
-import { getImgUrls } from "../utils/getImgUrls"
+import { Book } from "../home/TopSeller"
+import { getImgUrls } from "../../utils/getImgUrls"
 import { Link } from "react-router-dom"
 
 interface BookProps {
   book: Book
 }
 
-export default function Product({book}:BookProps) {
+export default function BookCard({book}:BookProps) {
   return (
     <div className="rounded-lg transition-shadow max-w-sm flex flex-col sm:flex-row flex-shrink-0 px-7 sm:px-0">
         <div className="w-full sm:w-1/2 h-72 sm:flex-shrink-0">

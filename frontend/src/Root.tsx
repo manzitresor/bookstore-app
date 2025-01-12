@@ -1,10 +1,10 @@
-import Main from "./pages/Main";
-import TopSeller from "./pages/TopSeller";
+import Home from "./pages/home/Home";
+import TopSeller from "./pages/home/TopSeller";
 
 export default function Root() {
   return (
     <div className="mx-10">
-      <Main/>
+      <Home/>
       <TopSeller/>
     </div>
   )

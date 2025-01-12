@@ -1,5 +1,5 @@
-import books from "../assets/Animation.svg"
-export default function Main() {
+import books from "../../assets/Animation.svg"
+export default function Home() {
   return (
     <div className="grid grid-cols-1 gap-y-16 md:gap-y-0 md:grid-cols-2 md:items-center h-auto mb-14 md:h-screen"> 
 
