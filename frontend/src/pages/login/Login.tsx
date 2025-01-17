@@ -5,14 +5,14 @@ import { FaGoogle } from "react-icons/fa";
 export default function Login() {
   return (
     <div className="w-1/3 shadow-lg mx-auto p-11">
-      <h3 className="text-semi">Please Login</h3>
+      <h3 className="font-bold text-lg">Please Login</h3>
       <form>
         <div className="flex flex-col my-6">
-            <label>Email</label>
+            <label className="font-bold" htmlFor="email">Email</label>
             <input type="email" id='email' placeholder="Email Address" className="border border-gray-300 p-2 rounded-lg focus:outline-none"/>
         </div>
         <div className="flex flex-col my-6">
-            <label>Password</label>
+            <label className="font-bold" htmlFor="password">Password</label>
             <input type="password" id='password' placeholder="Password" className="border border-gray-300 p-2 rounded-lg focus:outline-none"/>
         </div>
         <div>
