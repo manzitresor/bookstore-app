@@ -1,19 +1,40 @@
 import { Checkbox } from "flowbite-react";
 import { Link } from "react-router-dom";
 import { FaGoogle } from "react-icons/fa";
+import  {SubmitHandler, useForm} from 'react-hook-form'
+
+interface IformInput {
+  email: string,
+  password: string
+}
 
 export default function Login() {
+  const {register,handleSubmit } = useForm<IformInput>()
+  const onSubmit: SubmitHandler<IformInput> = (data) => console.log(data);
+
   return (
-    <div className="w-1/3 shadow-lg mx-auto p-11">
+    <div className="w-full sm:w-1/3 shadow-lg mx-auto p-11">
       <h3 className="font-bold text-lg">Please Login</h3>
-      <form>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <div className="flex flex-col my-6">
             <label className="font-bold" htmlFor="email">Email</label>
-            <input type="email" id='email' placeholder="Email Address" className="border border-gray-300 p-2 rounded-lg focus:outline-none"/>
+            <input 
+                  type="email" 
+                  id='email' 
+                  placeholder="Email Address" 
+                  className="border border-gray-300 p-2 rounded-lg focus:outline-none"
+                  {...register('email')}
+                  />
         </div>
         <div className="flex flex-col my-6">
             <label className="font-bold" htmlFor="password">Password</label>
-            <input type="password" id='password' placeholder="Password" className="border border-gray-300 p-2 rounded-lg focus:outline-none"/>
+            <input 
+                  type="password" 
+                  id='password' 
+                  placeholder="Password" 
+                  className="border border-gray-300 p-2 rounded-lg focus:outline-none"
+                  {...register('password')}
+                  />
         </div>
         <div>
             <Checkbox></Checkbox>
