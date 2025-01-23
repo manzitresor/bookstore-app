@@ -1,5 +1,5 @@
 import  search from "../assets/Search Icon.svg";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { CgProfile } from "react-icons/cg";
 import { FaRegHeart } from "react-icons/fa";
 import { RiMenu2Fill } from "react-icons/ri";
@@ -9,7 +9,7 @@ import { useState } from "react";
 
 export default function Navbar() {
   const [isDropdown,setIsDropdown] = useState(false)
-  const user = true;
+  const user = false;
 
   const navigation = [
     {name: 'Dashboard', path:'/dashboard'},
@@ -55,7 +55,9 @@ export default function Navbar() {
                   }
                 </div>
                 : 
-              <CgProfile className="size-6"/>
+                <Link to='/login'>
+                      <CgProfile className="size-6"/>
+                </Link>
           }
           <button>
             <FaRegHeart className="size-6"/>
