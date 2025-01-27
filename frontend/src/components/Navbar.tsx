@@ -6,9 +6,12 @@ import { RiMenu2Fill } from "react-icons/ri";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import  profile  from "../assets/avatar.png";
 import { useState } from "react";
+import { useSelector } from "react-redux";
+import { RootState } from "../redux/store";
 
 export default function Navbar() {
   const [isDropdown,setIsDropdown] = useState(false)
+  const cartItems = useSelector((state: RootState) => state.addCart.cartItems)
   const user = false;
 
   const navigation = [
@@ -64,7 +67,9 @@ export default function Navbar() {
           </button>
           <NavLink to='/' className="bg-primary text-white flex items-center gap-x-3 rounded-lg px-3 py-2 sm:px-6">
             <MdOutlineShoppingCart  className="text-2xl"/>
-            <p>Basket</p>
+            {
+              cartItems.length <= 0 ? <p>0</p> : <p>{cartItems.length}</p>
+            }
           </NavLink>
         </div>
         <MdOutlineShoppingCart  className="text-3xl block md:hidden"/>

@@ -42,7 +42,7 @@ export const news:News[] = [
 
 export default function News() {
   return (
-    <div>
+    <div className='border-2 border-red-100 mt-36'>
       <h3 className="text-3xl font-semibold font-Montserrat mb-6">News</h3>
         <Swiper
         slidesPerView={1}
