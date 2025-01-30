@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 import { useDispatch } from "react-redux"
 import { addCart } from "../../redux/features/cart/cartSlice"
 
-interface BookProps {
+export interface BookProps {
   book: Book
 }
 

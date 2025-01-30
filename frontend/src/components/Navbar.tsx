@@ -65,7 +65,7 @@ export default function Navbar() {
           <button>
             <FaRegHeart className="size-6"/>
           </button>
-          <NavLink to='/' className="bg-primary text-white flex items-center gap-x-3 rounded-lg px-3 py-2 sm:px-6">
+          <NavLink to='/cart' className="bg-primary text-white flex items-center gap-x-3 rounded-lg px-3 py-2 sm:px-6">
             <MdOutlineShoppingCart  className="text-2xl"/>
             {
               cartItems.length <= 0 ? <p>0</p> : <p>{cartItems.length}</p>
