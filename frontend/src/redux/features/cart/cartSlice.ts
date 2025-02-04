@@ -21,7 +21,7 @@ const initialState: cartState = {
 }
 
 const cartSlice = createSlice({
-    name: 'addCart',
+    name: 'cart',
     initialState,
     reducers: {
         addCart: (state,action: PayloadAction<cartItem>)=>{
@@ -33,10 +33,13 @@ const cartSlice = createSlice({
             } else {
                 alert('Item already exist')
             }
+        },
+        removeCart: (state,action:PayloadAction<cartItem>) => {
+            state.cartItems = state.cartItems.filter(item => item._id !== action.payload._id)
         }
     }
 })
 
-export const { addCart } = cartSlice.actions
+export const { addCart,removeCart } = cartSlice.actions
 
 export default cartSlice.reducer

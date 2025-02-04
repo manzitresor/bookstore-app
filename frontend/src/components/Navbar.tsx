@@ -11,7 +11,7 @@ import { RootState } from "../redux/store";
 
 export default function Navbar() {
   const [isDropdown,setIsDropdown] = useState(false)
-  const cartItems = useSelector((state: RootState) => state.addCart.cartItems)
+  const cartItems = useSelector((state: RootState) => state.cart.cartItems)
   const user = false;
 
   const navigation = [
