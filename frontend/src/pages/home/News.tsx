@@ -42,7 +42,7 @@ export const news:News[] = [
 
 export default function News() {
   return (
-    <div>
+    <div className=''>
       <h3 className="text-3xl font-semibold font-Montserrat mb-6">News</h3>
         <Swiper
         slidesPerView={1}
@@ -72,7 +72,7 @@ export default function News() {
         {
             news.map((data: News) => (
               <SwiperSlide>
-                  <div className='flex gap-x-10'>
+                  <div className='flex flex-col gap-x-10 md:flex-row'>
                       <div>
                           <h5 className="text-gray-800 text-lg">{data.title}</h5>
                           <p className="border-2 border-primary w-20 my-2"></p>
@@ -80,7 +80,7 @@ export default function News() {
                             {data.description}
                           </p>
                       </div>
-                      <img src={data.image}></img>
+                      <img src={data.image} className='object-center'></img>
                   </div>
               </SwiperSlide>
             ))
