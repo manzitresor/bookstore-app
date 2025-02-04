@@ -4,7 +4,6 @@ import { getImgUrls } from "../../utils/getImgUrls"
 import { Link } from "react-router-dom"
 import { useDispatch } from "react-redux"
 import { addCart } from "../../redux/features/cart/cartSlice"
-
 export interface BookProps {
   book: Book
 }

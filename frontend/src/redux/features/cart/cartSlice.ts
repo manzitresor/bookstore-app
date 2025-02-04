@@ -28,10 +28,6 @@ const cartSlice = createSlice({
             const existingItem = state.cartItems.find(item => item._id === action.payload._id)
             if(!existingItem) {
                 state.cartItems=[...state.cartItems,action.payload]
-                console.log("working",action.payload)
-              alert('Items succesful added')
-            } else {
-                alert('Item already exist')
             }
         },
 
