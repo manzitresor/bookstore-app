@@ -1,13 +1,18 @@
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { RootState } from "../../redux/store"
 import AddCart from "./AddCart"
+import { clearCart } from "../../redux/features/cart/cartSlice"
 export default function Cart() {
     const cartItems = useSelector((state: RootState)=> state.cart.cartItems)
+    const dispatch = useDispatch()
+    const handleClearCart = () => {
+      dispatch(clearCart())
+    }
   return (
     <div>
       <div className="flex justify-between mx-6">
         <h3 className="text-lg">Shopping cart</h3>
-        <button className="bg-secondary p-2 rounded-lg text-black hover:bg-inherit hover:border hover:border-primary">Clear Cart</button>
+        <button className="bg-secondary p-2 rounded-lg text-black hover:bg-inherit hover:border hover:border-primary" onClick={() => handleClearCart()}>Clear Cart</button>
       </div>
       <div className="shadow-xl p-7">
           {
