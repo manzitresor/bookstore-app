@@ -11,6 +11,7 @@ const theme = extendTheme({
     global: () => ({
       body: {
         bg: "gray.50",
+        color: "black"
       },
     }),
   },

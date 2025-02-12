@@ -21,7 +21,7 @@ export default function Navbar() {
     {name: 'CheckOut', path:'/checkout'},
   ]
   return (
-    <header className="w-full md:max-w-screen-2xl md:mx-auto md:px-4 py-6 text-black">
+    <header className="w-full md:max-w-screen-2xl md:mx-auto md:px-4 py-6">
       <nav className="flex mx-4 justify-between items-center md:mx-auto">
         <div className="flex gap-x-0 md:gap-x-16 items-center">
           <NavLink to='/'>
