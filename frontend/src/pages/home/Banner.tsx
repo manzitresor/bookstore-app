@@ -5,8 +5,8 @@ export default function Banner() {
     <div className="grid grid-cols-1 gap-y-16 md:gap-y-0 md:grid-cols-2 md:items-center h-auto mb-14 md:h-screen"> 
 
     <div className="order-2 md:order-1 space-y-9 md:space-y-7">
-     <h1 className="font-Montserrat text-black font-medium text-4xl">New Releases This Week</h1>
-     <p className="font-Montserrat text-lg  md:text-base">
+     <h1 className="font-Montserrat font-medium text-4xl">New Releases This Week</h1>
+     <p className="font-Montserrat text-lg  md:text-base text-gray-500">
      It's time to update your reading list with some of the latest and greatest releases in the literary world. 
      From heart-pumping thrillers to captivating memoirs, this week's new releases offer something for everyone
      </p>

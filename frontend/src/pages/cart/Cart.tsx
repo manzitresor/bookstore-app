@@ -2,6 +2,8 @@ import { useDispatch, useSelector } from "react-redux"
 import { RootState } from "../../redux/store"
 import AddCart from "./AddCart"
 import { clearCart } from "../../redux/features/cart/cartSlice"
+
+
 export default function Cart() {
     const cartItems = useSelector((state: RootState)=> state.cart.cartItems)
     const dispatch = useDispatch()
