@@ -4,15 +4,25 @@ import { getImgUrls } from "../../utils/getImgUrls"
 import { Link } from "react-router-dom"
 import { useDispatch } from "react-redux"
 import { addCart } from "../../redux/features/cart/cartSlice"
+import { useToast } from '@chakra-ui/react'
+
 export interface BookProps {
   book: Book
 }
 
 export default function BookCard({book}:BookProps) {
    const dispatch = useDispatch();
+   const toast = useToast()
 
   const handleDispatch = (product: Book) => {
     dispatch(addCart(product));
+    toast({
+          title: 'Product Added',
+          description: "Product successful added",
+          status: 'success',
+          duration: 9000,
+          isClosable: true,
+        })
   };
   return (
     <div className="rounded-lg transition-shadow max-w-sm flex flex-col sm:flex-row flex-shrink-0 px-7 sm:px-0">
